@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RestaurantsNearMe</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="address">Address</string>
+    <string name="distance">Distance :</string>
+    <string name="restaurant_name">Restaurant Name</string>
+    <string name="current_location">Current Location</string>
+</resources>
