@@ -1,4 +1,4 @@
-package retrofitdemo.com.restaurantsnearme.Activity
+package retrofitdemo.com.restaurantsnearme.view
 
 import android.graphics.Color
 import android.support.v4.app.FragmentActivity

@@ -5,4 +5,13 @@
     <string name="distance">Distance :</string>
     <string name="restaurant_name">Restaurant Name</string>
     <string name="current_location">Current Location</string>
+    <string name="details">Details</string>
+
+    <string name="loading">Loading..</string>
+    <string name="network_error">No Network Available</string>
+    <string name="response_error">Failed to get data !</string>
+    <string name="gps">Gps is off</string>
+    <string name="error_in_location">Error in fetching the location</string>
+
+
 </resources>

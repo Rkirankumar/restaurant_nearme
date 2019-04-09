@@ -1,4 +1,4 @@
-package retrofitdemo.com.restaurantsnearme.Responsc
+package retrofitdemo.com.restaurantsnearme.network.model
 
 /**
  * Created by Kiran on 05/04/19.

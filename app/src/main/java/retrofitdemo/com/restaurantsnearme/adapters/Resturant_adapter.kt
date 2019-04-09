@@ -1,4 +1,4 @@
-package retrofitdemo.com.restaurantsnearme.Adapter
+package retrofitdemo.com.restaurantsnearme.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -10,12 +10,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.squareup.picasso.Picasso
-import retrofitdemo.com.restaurantsnearme.Activity.MainActivity
-import retrofitdemo.com.restaurantsnearme.Activity.MapsActivity
+import retrofitdemo.com.restaurantsnearme.view.MainActivity
+import retrofitdemo.com.restaurantsnearme.view.MapsActivity
 import retrofitdemo.com.restaurantsnearme.R
 import retrofitdemo.com.restaurantsnearme.R.id.distance
-import retrofitdemo.com.restaurantsnearme.Responsc.PlacesDetails_Modal
+import retrofitdemo.com.restaurantsnearme.network.model.PlacesDetails_Modal
+import retrofitdemo.com.restaurantsnearme.utils.ImageUtils
 
 
 import java.util.ArrayList
@@ -75,8 +75,7 @@ class Resturant_adapter(context: Context, storeModels: ArrayList<PlacesDetails_M
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         if (holder.view_type == TYPE_LIST) {
             holder.res_name.setText(storeModels.get(holder.getAdapterPosition() - 1).name)
-            Picasso.with(context).load(storeModels.get(holder.getAdapterPosition() - 1).photourl)
-                    .placeholder(R.drawable.placeholder).resize(100, 100).into(holder.res_image)
+            ImageUtils.loadImage(storeModels.get(holder.getAdapterPosition() - 1).photourl,holder.res_image)
             holder.res_address.setText(storeModels.get(holder.getAdapterPosition() - 1).address)
             holder.res_distance.setText(storeModels.get(holder.getAdapterPosition() - 1).distance)
             Log.i("details on adapter", (storeModels.get(holder.getAdapterPosition() - 1).name + " " +
@@ -109,6 +108,7 @@ class Resturant_adapter(context: Context, storeModels: ArrayList<PlacesDetails_M
         internal lateinit var res_image: ImageView
         internal lateinit var card: LinearLayout
         internal var view_type: Int = 0
+
         init {
             if (viewType == TYPE_LIST) {
                 view_type = 1
@@ -124,6 +124,7 @@ class Resturant_adapter(context: Context, storeModels: ArrayList<PlacesDetails_M
             }
         }
     }
+
     companion object {
         private val TYPE_HEAD = 0
         private val TYPE_LIST = 1
