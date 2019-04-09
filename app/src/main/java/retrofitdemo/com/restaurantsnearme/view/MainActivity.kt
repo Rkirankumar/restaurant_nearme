@@ -84,8 +84,8 @@ class MainActivity : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, G
     }
     override fun init() {
         mAdapter = Resturant_adapter(applicationContext, mCityFactsList, maddress, source_lat, source_long)
-        rvCityFactsList.layoutManager = LinearLayoutManager(this)
-        rvCityFactsList.adapter = mAdapter
+        rvFactsList.layoutManager = LinearLayoutManager(this)
+        rvFactsList.adapter = mAdapter
 
 
     }
@@ -108,9 +108,9 @@ class MainActivity : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, G
             rvProgress.visibility = View.GONE
             Collections.sort(mCityFactsList) { lhs, rhs -> lhs.distance.compareTo(rhs.distance) }
             mAdapter = Resturant_adapter(applicationContext, mCityFactsList, maddress, source_lat, source_long)
-            rvCityFactsList.layoutManager = LinearLayoutManager(this)
-            rvCityFactsList.adapter = mAdapter
-            rvCityFactsList.adapter!!.notifyDataSetChanged()
+            rvFactsList.layoutManager = LinearLayoutManager(this)
+            rvFactsList.adapter = mAdapter
+            rvFactsList.adapter!!.notifyDataSetChanged()
         }
     }
 
